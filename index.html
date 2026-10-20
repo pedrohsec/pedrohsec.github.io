@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedro Henrique | Cyber Defender</title>
+  <meta name="description" content="Portfólio de Pedro Henrique, estudante de Segurança Cibernética na FIAP. Projetos, certificados e habilidades em Blue Team e defesa.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Pedro Henrique: Cyber Defender">
+  <meta property="og:description" content="Projetos, certificados e a jornada de um estudante de Segurança Cibernética.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Evita o "flash" do site antes da intro quando ela ainda não foi vista nesta sessão
+    try { if (sessionStorage.getItem('ph-intro-seen')) document.documentElement.classList.add('intro-done'); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
+
+  <!-- 1. Intro de abertura -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__terminal">
+      <p class="intro__line" data-line="&gt; initializing pedro.exe..."></p>
+      <p class="intro__line" data-line="&gt; loading modules: blue_team, linux, networking"></p>
+      <p class="intro__line intro__line--ok" data-line="[ OK ] access granted"></p>
+      <p class="intro__name">Pedro Henrique</p>
+    </div>
+    <button class="intro__skip" id="intro-skip" type="button" data-i18n="intro.skip">Pular intro</button>
+  </div>
+
+  <!-- 2. Quem está assistindo? -->
+  <div class="profiles" id="profiles" hidden>
+    <div class="profiles__bg" aria-hidden="true"><div class="profiles__wall" id="terminal-wall"></div></div>
+    <button class="lang-toggle profiles__lang" type="button" data-lang-toggle data-i18n-attr="aria-label:lang.switch"><span data-lang="pt">PT</span><span data-lang="en">EN</span></button>
+    <div class="profiles__inner">
+      <p class="profiles__prompt" aria-hidden="true">pedro@cyber:~$ sudo select-profile<span class="cursor"></span></p>
+      <h2 class="profiles__title" data-i18n="profiles.title">Quem está assistindo?</h2>
+      <ul class="profiles__list" role="list">
+        <li>
+          <button class="profile" type="button" data-profile="recrutador">
+            <span class="profile__avatar profile__avatar--a" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="22" rx="3"/><path d="M18 16v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M8 26h32"/></svg>
+            </span>
+            <span class="profile__name" data-profile-label="recrutador">Recrutador</span>
+            <span class="profile__hint" data-i18n="profiles.hint.recrutador">Projetos, certificados e formação</span>
+          </button>
+        </li>
+        <li>
+          <button class="profile" type="button" data-profile="dev">
+            <span class="profile__avatar profile__avatar--b" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M17 15 8 24l9 9M31 15l9 9-9 9M27 11l-6 26"/></svg>
+            </span>
+            <span class="profile__name" data-profile-label="dev">Dev/Tech</span>
+            <span class="profile__hint" data-i18n="profiles.hint.dev">Stack, código e habilidades</span>
+          </button>
+        </li>
+        <li>
+          <button class="profile" type="button" data-profile="curioso">
+            <span class="profile__avatar profile__avatar--c" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24Z"/><circle cx="24" cy="24" r="6"/></svg>
+            </span>
+            <span class="profile__name" data-profile-label="curioso">Curioso</span>
+            <span class="profile__hint" data-i18n="profiles.hint.curioso">Quem é o Pedro, afinal?</span>
+          </button>
+        </li>
+      </ul>
+      <button class="profiles__skip" type="button" data-profile="" data-i18n="profiles.skip">Só navegar</button>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#inicio" data-i18n-attr="aria-label:brand.label" aria-label="Pedro Henrique, início">
+      <span class="brand__mark">PH</span>
+    </a>
+    <nav class="nav" id="nav" data-i18n-attr="aria-label:nav.label" aria-label="Principal">
+      <a href="#inicio" data-i18n="nav.home">Início</a>
+      <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+      <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+      <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+      <a href="#jornada" data-i18n="nav.journey">Jornada</a>
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+    <div class="topbar__right">
+      <button class="lang-toggle" type="button" data-lang-toggle data-i18n-attr="aria-label:lang.switch"><span data-lang="pt">PT</span><span data-lang="en">EN</span></button>
+      <button class="topbar__profile" id="switch-profile" type="button" data-i18n-attr="aria-label:profile.switch" aria-label="Trocar perfil">
+        <span class="topbar__avatar" id="current-avatar" aria-hidden="true"></span>
+        <span class="topbar__profile-name" id="current-profile">Trocar perfil</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- 3. Hero -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas class="hero__rain" id="rain" aria-hidden="true"></canvas>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__badge"><span class="brand__mark brand__mark--sm">PH</span> <span data-i18n="hero.badge">Série original</span></p>
+        <h1 class="hero__title glitch" id="hero-title" data-text="Pedro Henrique:&#10;Cyber Defender">Pedro Henrique: <span>Cyber Defender</span></h1>
+        <div class="hero__meta">
+          <span class="match" data-i18n="match" data-n="98">98% relevante</span>
+          <span>2026</span>
+          <span class="rating" data-i18n-attr="title:rating.title" title="Classificação livre">L</span>
+          <span data-i18n="hero.season">1ª temporada</span>
+          <span class="season-tag" data-i18n="hero.newSeason">Nova temporada: 2026</span>
+        </div>
+        <p class="hero__synopsis" id="hero-synopsis">
+          Sou estudante de Segurança Cibernética na FIAP e troquei a curiosidade por método: monto laboratórios de rede, escrevo ferramentas de defesa em Python e administro Linux. Agora procuro minha primeira oportunidade para proteger sistemas de verdade.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--play" href="#projetos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="hero.cta">Ver projetos</span></a>
+          <button class="btn btn--ghost" type="button" data-open-about><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 10.5v6M12 7.2v.1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span data-i18n="hero.more">Mais sobre mim</span></button>
+        </div>
+      </div>
+
+      <p class="hero__caption" aria-hidden="true"><span id="caption-text"></span><span class="cursor"></span></p>
+    </section>
+
+    <!-- 4. Fileiras -->
+    <div class="rows">
+      <section class="row" id="projetos" aria-labelledby="t-projetos" data-for="recrutador dev">
+        <h2 class="row__title" id="t-projetos"><span data-i18n="row.projects">Em alta: Projetos</span></h2>
+        <div class="row__viewport">
+          <button class="row__arrow row__arrow--prev" type="button" data-i18n-attr="aria-label:row.prev" aria-label="Rolar para a esquerda" hidden>‹</button>
+          <ul class="row__track" role="list" data-list="projects"></ul>
+          <button class="row__arrow row__arrow--next" type="button" data-i18n-attr="aria-label:row.next" aria-label="Rolar para a direita" hidden>›</button>
+        </div>
+      </section>
+
+      <section class="row" id="certificados" aria-labelledby="t-certificados" data-for="recrutador">
+        <h2 class="row__title" id="t-certificados"><span data-i18n="row.certs">Certificados que você precisa ver</span></h2>
+        <div class="row__viewport">
+          <button class="row__arrow row__arrow--prev" type="button" data-i18n-attr="aria-label:row.prev" aria-label="Rolar para a esquerda" hidden>‹</button>
+          <ul class="row__track" role="list" data-list="certs"></ul>
+          <button class="row__arrow row__arrow--next" type="button" data-i18n-attr="aria-label:row.next" aria-label="Rolar para a direita" hidden>›</button>
+        </div>
+      </section>
+
+      <section class="row" id="habilidades" aria-labelledby="t-habilidades" data-for="dev">
+        <h2 class="row__title" id="t-habilidades"><span data-i18n="row.skills">Habilidades</span></h2>
+        <div class="row__viewport">
+          <button class="row__arrow row__arrow--prev" type="button" data-i18n-attr="aria-label:row.prev" aria-label="Rolar para a esquerda" hidden>‹</button>
+          <ul class="row__track" role="list" data-list="skills"></ul>
+          <button class="row__arrow row__arrow--next" type="button" data-i18n-attr="aria-label:row.next" aria-label="Rolar para a direita" hidden>›</button>
+        </div>
+      </section>
+
+      <!-- 6. Continue assistindo -->
+      <section class="row" id="jornada" aria-labelledby="t-jornada" data-for="recrutador curioso">
+        <h2 class="row__title" id="t-jornada"><span data-i18n="row.journey">Continue assistindo como Pedro</span></h2>
+        <div class="continue" id="continue"></div>
+      </section>
+
+      <section class="row" id="em-breve" aria-labelledby="t-breve" data-for="dev curioso">
+        <h2 class="row__title" id="t-breve"><span data-i18n="row.soon">Em breve</span></h2>
+        <div class="row__viewport">
+          <button class="row__arrow row__arrow--prev" type="button" data-i18n-attr="aria-label:row.prev" aria-label="Rolar para a esquerda" hidden>‹</button>
+          <ul class="row__track" role="list" data-list="soon"></ul>
+          <button class="row__arrow row__arrow--next" type="button" data-i18n-attr="aria-label:row.next" aria-label="Rolar para a direita" hidden>›</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- 7. Sobre -->
+    <section class="about" id="sobre" aria-labelledby="t-sobre" data-for="curioso">
+      <div class="about__poster" aria-hidden="true">
+        <span class="brand__mark brand__mark--sm">PH</span>
+        <span class="about__poster-title">Cyber<br>Defender</span>
+        <span class="about__poster-foot" data-i18n="series.poster">Temporada 1</span>
+      </div>
+      <div class="about__body">
+        <h2 class="about__title" id="t-sobre" data-i18n="series.title">Sobre a série</h2>
+        <p class="about__lead" data-i18n="series.lead">
+          Decidi ficar do lado de quem defende. Entre aulas na FIAP, laboratórios no Packet Tracer e madrugadas no terminal Linux, venho aprendendo que segurança não é um produto: é rotina, registro e atenção aos detalhes.
+        </p>
+        <dl class="about__facts">
+          <div><dt data-i18n="series.genre">Gênero</dt><dd data-i18n="series.genreValue">Blue Team / Defesa</dd></div>
+          <div><dt data-i18n="series.rating">Classificação</dt><dd><span class="rating">L</span> <span data-i18n="series.ratingValue">Livre para recrutadores</span></dd></div>
+          <div><dt data-i18n="series.education">Formação</dt><dd data-i18n="series.educationValue">Tecnólogo em Segurança Cibernética, FIAP</dd></div>
+          <div><dt data-i18n="series.status">Status</dt><dd data-i18n="series.statusValue">Disponível para estágio e primeira oportunidade</dd></div>
+        </dl>
+        <h3 class="about__cast-title" data-i18n="series.cast">Elenco</h3>
+        <ul class="cast" id="cast" role="list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Contato -->
+  <footer class="contact" id="contato" aria-labelledby="t-contato">
+    <h2 class="contact__title" id="t-contato" data-i18n="contact.title">Gostou? Vamos conversar</h2>
+    <p class="contact__text" data-i18n="contact.text">Se a sua equipe precisa de alguém disposto a aprender rápido e levar a defesa a sério, o próximo episódio pode ser com você.</p>
+    <div class="contact__actions">
+      <a class="btn btn--play" data-link="linkedin" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5c0-1.2-.02-2.73-1.67-2.73-1.66 0-1.92 1.3-1.92 2.65V21h-4z"/></svg>LinkedIn
+      </a>
+      <a class="btn btn--ghost" data-link="email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 6 9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="contact.email">E-mail</span>
+      </a>
+    </div>
+    <p class="contact__credits"><span class="mono" data-i18n="contact.credits">$ echo "Feito à mão com HTML, CSS e JavaScript"</span><br>© <span id="year">2026</span> Pedro Henrique</p>
+  </footer>
+
+  <!-- 5. Modal "página do episódio" -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <div class="modal__inner" id="modal-content"></div>
+  </dialog>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
